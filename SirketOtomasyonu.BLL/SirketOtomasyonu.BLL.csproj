@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3512FE64-A9AD-4D79-90C7-507249A80F7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SirketOtomasyonu.BLL</RootNamespace>
+    <AssemblyName>SirketOtomasyonu.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.XtraGrid.v18.2, Version=18.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Anasayfaislemleri.cs" />
+    <Compile Include="Bankaislemleri\BankalarManager.cs" />
+    <Compile Include="Bankaislemleri\IBankalarInterface.cs" />
+    <Compile Include="Faturaislemleri\FaturalarManager.cs" />
+    <Compile Include="Faturaislemleri\IFaturaInterface.cs" />
+    <Compile Include="GelirSatisislemleri\GelirSatisManager.cs" />
+    <Compile Include="GelirSatisislemleri\IGelirSatis.cs" />
+    <Compile Include="Giderislemleri\GiderlerManager.cs" />
+    <Compile Include="Giderislemleri\IGiderInterface.cs" />
+    <Compile Include="ililceSecimi\ililceGetir.cs" />
+    <Compile Include="Kullaniciislemleri\IKullaniciInterface.cs" />
+    <Compile Include="Kullaniciislemleri\KullanicilarManager.cs" />
+    <Compile Include="Loginislemleri\ILoginInterface.cs" />
+    <Compile Include="Loginislemleri\LoginManager.cs" />
+    <Compile Include="Markaislemleri\IMarkaInterface.cs" />
+    <Compile Include="Markaislemleri\MarkalarManager.cs" />
+    <Compile Include="Modelislemleri\IModelInterface.cs" />
+    <Compile Include="Modelislemleri\ModellerManager.cs" />
+    <Compile Include="MusteriBilgileri\IMusterilerInterface.cs" />
+    <Compile Include="MusteriBilgileri\MusterilerManager.cs" />
+    <Compile Include="Notislemleri\INotlarInterface.cs" />
+    <Compile Include="Notislemleri\NotlarManager.cs" />
+    <Compile Include="Personelislemleri\IPersonelInterface.cs" />
+    <Compile Include="Personelislemleri\PersonelManager.cs" />
+    <Compile Include="SirketBankaislemleri\ISirketBankaInterface.cs" />
+    <Compile Include="SirketBankaislemleri\SirketBankaBilgiManager.cs" />
+    <Compile Include="Sirketislemleri\ISirketInterface.cs" />
+    <Compile Include="Sirketislemleri\SirketlerManager.cs" />
+    <Compile Include="Urunler\IUrunInterface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Urunler\UrunlerManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SiketOtomasyonu.DLL\SiketOtomasyonu.DLL.csproj">
+      <Project>{4904e1d3-ba7a-4ee3-8467-cb47a92749fa}</Project>
+      <Name>SiketOtomasyonu.DLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
